@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>{{ saga.title }}</h1>
+
+<ul>
+  <li>Commence au chapitre : {{ saga.chap_start }}</li>
+  <li>Termine au chapitre : {{ saga.chap_stop }}</li>
+  <li>Resumé : {{ saga.resume }}</li>
+
+  <li>Detail : {{ saga.biography }}</li>
+</ul>
+
+<a href="{% url 'saga-list' %}">Retour à la liste des Sagas</a>
+
+{% endblock %}

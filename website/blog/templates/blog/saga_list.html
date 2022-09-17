@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Sagas</h1>
+
+<ul>
+  {% for saga in sagas %}
+  <a href="{% url 'saga-detail' saga.id %}"><li>{{ saga.title }}</li></a>
+  {% endfor %}
+</ul>
+
+{% endblock %}

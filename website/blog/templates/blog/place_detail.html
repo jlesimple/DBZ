@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>{{ place.area }}</h1>
+
+<ul>
+  <li>{{ place.thumbnail }}</li>
+  <li>Description : {{ place.description }}</li>
+</ul>
+
+<a href="{% url 'place-list' %}">Retour à la liste des lieux emblématiques </a>
+
+{% endblock %}

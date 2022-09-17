@@ -1,0 +1,27 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static 'blog/styles.css' %}"/>
+    <title>Dragon Ball Z</title>
+
+  </head>
+  <body>
+
+    <nav>
+      <a href="{% url 'accueil' %}">Accueil</a>
+      <a href="{% url 'character-list' %}">Personnages</a>
+      <a href="{% url 'saga-list' %}">Sagas</a>
+      <a href="{% url 'place-list' %}">Lieux</a>
+      <a href="{% url 'about' %}">A propos de nous</a>
+      <a href="{% url 'contact' %}">Contactez nous</a>
+    </nav>
+
+    {% block content %}
+
+    {% endblock %}
+
+  </body>
+</html>

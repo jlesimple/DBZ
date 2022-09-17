@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Lieux</h1>
+
+<ul>
+  {% for place in places %}
+  <a href="{% url 'place-detail' place.id %}"><li>{{ place.area }}</li></a>
+  {% endfor %}
+</ul>
+
+{% endblock %}
