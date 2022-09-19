@@ -19,7 +19,7 @@ from blog import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('acccueil/', views.accueil, name='accueil'),
+    path('accueil/', views.accueil, name='accueil'),
     path('personnages/', views.character_list, name='character-list'),
     path('personnages/<int:id>/', views.character_detail, name='character-detail'),
     path('saga/', views.saga_list, name='saga-list'),
