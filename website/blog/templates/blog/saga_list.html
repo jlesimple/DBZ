@@ -4,10 +4,15 @@
 
 <h1>Sagas</h1>
 
-<ul>
+<div class="container-1">
   {% for saga in sagas %}
-  <a href="{% url 'saga-detail' saga.id %}"><li>{{ saga.title }}</li></a>
+    <a href="{% url 'saga-detail' saga.id %}">
+      <div class="container-2">
+        <img src="{{ saga.thumbnail.url }}" alt="{{ saga.title }}" style="max-height: 100px" >
+        <li>{{ saga.title }}</li>
+      </div>
+    </a>
   {% endfor %}
-</ul>
+</div>
 
 {% endblock %}

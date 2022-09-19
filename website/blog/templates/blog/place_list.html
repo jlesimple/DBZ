@@ -4,10 +4,15 @@
 
 <h1>Lieux</h1>
 
-<ul>
+<div class="container-1">
   {% for place in places %}
-  <a href="{% url 'place-detail' place.id %}"><li>{{ place.area }}</li></a>
+    <a href="{% url 'place-detail' place.id %}">
+      <div class="container-2">
+        <img src="{{ place.thumbnail.url }}" alt="{{ place.area }}" style="max-height: 100px" >
+        <li>{{ place.area }}</li>
+      </div>
+  </a>
   {% endfor %}
-</ul>
+</div>
 
 {% endblock %}

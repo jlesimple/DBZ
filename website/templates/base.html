@@ -4,14 +4,16 @@
 <html lang="fr" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="{% static 'blog/styles.css' %}"/>
+    <link rel="stylesheet" href="{% static 'styles/styles.css' %}"/>
     <title>Dragon Ball Z</title>
 
   </head>
   <body>
 
     <nav>
-      <a href="{% url 'accueil' %}">Accueil</a>
+      <a href="{% url 'accueil' %}">
+        <img src="{% static 'media/blog/divers/logo_dbz.png' %}" alt="logo_dbz" style="max-height: 100px" >
+      </a>
       <a href="{% url 'character-list' %}">Personnages</a>
       <a href="{% url 'saga-list' %}">Sagas</a>
       <a href="{% url 'place-list' %}">Lieux</a>

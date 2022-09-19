@@ -8,9 +8,13 @@
   <li>Commence au chapitre : {{ saga.chap_start }}</li>
   <li>Termine au chapitre : {{ saga.chap_stop }}</li>
   <li>Resumé : {{ saga.resume }}</li>
-
-  <li>Detail : {{ saga.biography }}</li>
+  <li>{{ saga.place }}</li>
 </ul>
+
+
+<p>Detail : {{ saga.biography }}</p>
+
+<img src="{{ saga.thumbnail.url }}" alt="{{ saga.title }}">
 
 <a href="{% url 'saga-list' %}">Retour à la liste des Sagas</a>
 
