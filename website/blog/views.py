@@ -3,9 +3,6 @@ from django.http import HttpResponse
 
 from blog.models import Character, Saga, Place
 
-def accueil(request):
-    return render(request, 'blog/accueil.html')
-
 def character_list(request):
     characters = Character.objects.all()
     return render(request, 'blog/character_list.html', {'characters': characters})

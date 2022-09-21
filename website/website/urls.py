@@ -1,37 +1,24 @@
-"""website URL Configuration
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/4.1/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
 
-from blog import views
-
+from blog import views as blog_views
+from shop import views as shop_views
 
 
 from website import settings
 
 urlpatterns = [
+    path('', shop_views.index, name='index'),
     path('admin/', admin.site.urls),
-    path('accueil/', views.accueil, name='accueil'),
-    path('personnages/', views.character_list, name='character-list'),
-    path('personnages/<int:id>/', views.character_detail, name='character-detail'),
-    path('saga/', views.saga_list, name='saga-list'),
-    path('saga/<int:id>/', views.saga_detail, name= 'saga-detail'),
-    path('place/', views.place_list, name='place-list'),
-    path('place/<int:id>/', views.place_detail, name= 'place-detail'),
-    path('about-us/', views.about, name='about'),
-    path('contact-us/', views.contact, name='contact'),
+    path('personnages/', blog_views.character_list, name='character-list'),
+    path('personnages/<int:id>/', blog_views.character_detail, name='character-detail'),
+    path('saga/', blog_views.saga_list, name='saga-list'),
+    path('saga/<int:id>/', blog_views.saga_detail, name= 'saga-detail'),
+    path('place/', blog_views.place_list, name='place-list'),
+    path('place/<int:id>/', blog_views.place_detail, name= 'place-detail'),
+    path('about-us/', blog_views.about, name='about'),
+    path('contact-us/', blog_views.contact, name='contact'),
+    path('shop/', shop_views.product_list, name='product-list'),
+    path('shop/<int:id>', shop_views.product_detail, name='product-detail'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
