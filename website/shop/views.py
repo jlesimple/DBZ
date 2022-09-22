@@ -13,3 +13,8 @@ def product_list(request):
 def product_detail(request, id):
     product = Product.objects.get(id=id)
     return render (request, 'shop/product_detail.html', {'product': product})
+
+def add_to_cart(request, id):
+    user = request.user
+    product = Product.object.get(id=id)
+    

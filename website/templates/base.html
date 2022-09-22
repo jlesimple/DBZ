@@ -4,6 +4,7 @@
 <html lang="fr" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'favicon.png' %}" />
     <link rel="stylesheet" href="{% static 'styles/styles.css' %}"/>
     <title>Dragon Ball Z</title>
 
@@ -20,9 +21,18 @@
       <a href="{% url 'product-list' %}">Shop</a>
       <a href="{% url 'contact' %}">Contactez nous</a>
 
+      {% if user.is_authenticated %}
+        {{ user.username }}
+        <a href="{% url 'logout' %}">Déconnexion</a>
+      {% else %}
+        <a href="{% url 'login' %}">Connexion</a>
+        <a href="{% url 'signup' %}">S'inscrire</a>
+      {% endif %}
     </nav>
 
     {% block content %}
+
+
 
     {% endblock %}
 

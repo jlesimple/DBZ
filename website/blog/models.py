@@ -10,7 +10,7 @@ class Place(models.Model):
 
 class Character(models.Model):
 
-    class Race(models.TextChoices):
+    class Origin(models.TextChoices):
         SAYEN = 'Sayen'
         NAMEK = 'Namek'
         TERRIEN = 'Terrien'
@@ -18,7 +18,7 @@ class Character(models.Model):
 
     name=models.CharField(max_length=100)
     birth=models.IntegerField(default=0)
-    race=models.CharField(choices = Race.choices, max_length=10)
+    origin=models.CharField(choices = Origin.choices, max_length=10)
     biography=models.TextField(blank=True)
     activity=models.CharField(max_length=100, blank=True)
     thumbnail=models.ImageField(upload_to="characters", blank=True, null=True)
@@ -35,8 +35,6 @@ class Saga(models.Model):
     thumbnail=models.ImageField(upload_to="sagas", blank=True, null=True)
     character=models.ForeignKey(Character, null=True, blank=True, on_delete=models.SET_NULL)
     place=models.ForeignKey(Place, null=True, blank=True, on_delete=models.SET_NULL)
-
-
 
     def __str__(self):
         return self.title

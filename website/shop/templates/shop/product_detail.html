@@ -2,18 +2,21 @@
 
 {% block content %}
 
-<h1>Personnages</h1>
-<div class="container-1">
-  {% for product in products %}
-        <ul>
-          <a href="{% url 'product-detail' product.id %}">
-            <div class="container-2">
-              <img src="{{ product.thumbnail.url }}" alt="{{ product.name }}" style="max-height: 150px" >
-              <li>{{ product.name }}</li>
-            </div>
-          </a>
-        </ul>
-  {% endfor %}
-</div>
+<h1>{{ product.name }}</h1>
+
+<img src="{{ product.thumbnail.url }}" alt="{{ product.name }}">
+
+<ul>
+  <li>Prix : {{ product.price }} €</li>
+  <li>Stock : {{ product.quantity }}</li>
+  <li>Description : {{ product.description }}</li>
+</ul>
+
+{% if user.is_authenticated %}
+<p>
+  <a href="{% url 'add-to-cart' product.id %}">Ajouter dans le panier</a>
+</p>
+{% endif %}
+<a href="{% url 'product-list' %}">Retour à la liste des articles </a>
 
 {% endblock %}
