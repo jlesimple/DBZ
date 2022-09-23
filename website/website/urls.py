@@ -19,10 +19,10 @@ urlpatterns = [
     path('place/', blog_views.place_list, name='place-list'),
     path('place/<int:id>/', blog_views.place_detail, name= 'place-detail'),
     path('about-us/', blog_views.about, name='about'),
-    
-    path('shop/', shop_views.product_list, name='product-list'),
-    path('shop/<int:id>', shop_views.product_detail, name='product-detail'),
-    path('shop/<int:id>/add-to-cart', shop_views.add_to_cart, name='add-to-cart'),
+
+    path('product/', shop_views.product_list, name='product-list'),
+    path('product/<int:id>', shop_views.product_detail, name='product-detail'),
+    path('product/<int:id>/add-to-cart', shop_views.add_to_cart, name='add-to-cart'),
     path('signup/', account_views.signup, name='signup'),
     path('login/', account_views.login_user, name='login'),
     path('logout/', account_views.logout_user, name='logout'),
