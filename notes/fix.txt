@@ -1,0 +1,3 @@
+truc à fix : (semble pas urgent)
+
+- SHOP : problème de quantité des articles. supprimer un panier supprime le panier mais quand on recréer un panier, la quantité est toujours présente.  

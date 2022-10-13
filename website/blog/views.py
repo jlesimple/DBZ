@@ -29,6 +29,3 @@ def place_detail(request, id):
 
 def about(request):
     return render(request, 'blog/about.html')
-
-def contact(request):
-    return render(request, 'blog/contact.html')

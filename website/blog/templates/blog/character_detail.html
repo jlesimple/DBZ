@@ -7,8 +7,10 @@
 <img src="{{ character.thumbnail.url }}" alt="{{ character.name }}" style="max-height: 200px">
 
 <ul>
-  <li>Race : {{ character.origin }}</li>
-  <li>biography : {{ character.biography }}</li>
+  <li>
+    <span>Race : {{ character.origin }}</span>
+    <span>biography : {{ character.biography }}</span>
+  </li>
 </ul>
 
 <a href="{% url 'character-list' %}">Retour à la liste des personnages </a>

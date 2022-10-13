@@ -6,19 +6,19 @@
 
 <div class="container-1">
 
-  {% for product in products %}
-
-      <ul>
+  <ul>
+    {% for product in products %}
+      <li>
         <a href="{% url 'product-detail' product.id %}">
           <div class="container-2">
             <img src="{{ product.thumbnail.url }}" alt="{{ product.name }}" style="max-height: 150px" >
-            <li>{{ product.name }}</li>
+            <span>{{ product.name }}</span>
           </div>
         </a>
-      </ul>
+      </li>
+    {% endfor %}
+  </ul>
 
-  {% endfor %}
-  
 </div>
 
 {% endblock %}

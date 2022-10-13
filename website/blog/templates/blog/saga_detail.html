@@ -5,10 +5,12 @@
 <h1>{{ saga.title }}</h1>
 
 <ul>
-  <li>Commence au chapitre : {{ saga.chap_start }}</li>
-  <li>Termine au chapitre : {{ saga.chap_stop }}</li>
-  <li>Resumé : {{ saga.resume }}</li>
-  <li>{{ saga.place }}</li>
+  <li>
+    <span>Commence au chapitre : {{ saga.chap_start }}</span>
+    <span>Termine au chapitre : {{ saga.chap_stop }}</span>
+    <span>Resumé : {{ saga.resume }}</span>
+    <span>{{ saga.place }}</span>
+  </li>
 </ul>
 
 
@@ -16,6 +18,6 @@
 
 <img src="{{ saga.thumbnail.url }}" alt="{{ saga.title }}">
 
-<a href="{% url 'saga-list' %}">Retour à la liste des Sagas</a>
+<a href="{% url 'saga-spanst' %}">Retour à la spanste des Sagas</a>
 
 {% endblock %}

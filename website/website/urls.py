@@ -5,6 +5,7 @@ from django.urls import path
 from blog import views as blog_views
 from shop import views as shop_views
 from account import views as account_views
+from contact import views as contact_views
 
 from website import settings
 
@@ -26,7 +27,10 @@ urlpatterns = [
     path('signup/', account_views.signup, name='signup'),
     path('login/', account_views.login_user, name='login'),
     path('logout/', account_views.logout_user, name='logout'),
+    path('cart/', shop_views.cart, name='cart'),
+    path('cart/delete', shop_views.delete_cart, name='delete-cart'),
 
-    path('contact-us/', blog_views.contact, name='contact'),
+    path('contact-us/', contact_views.contact, name='contact'),
+    path('contact-us/email-sent', contact_views.contact, name='email-sent'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

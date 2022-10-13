@@ -1,0 +1,3 @@
+truc à rajouter / modifier
+
+- modifier les urls => créer un urls.py dans chaque app et brancher seulement les apps entres elles.
